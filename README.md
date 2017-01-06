@@ -24,4 +24,4 @@ _Remember, higher scoring strings will make people more impressed when you post 
 ##Contributing
 Well, the code is pretty much done. I suppose you could fork it and open a PR if you wanted
 to add something. Really though, I guess the best way you could help is to put in a good
-word for me so they don't fire me for this abomination.
+word for me so they don't fire me for this abomination (again).
