@@ -17,8 +17,8 @@ Protip: `pbcopy` will increase your emoji throughput
 ###Getting the score of your emoji text
 _Remember, higher scoring strings will make people more impressed when you post to Slack._
 ```
-→  ./scrabbleemoji.lua welcome to starkandwayne slack hell --points
-66
+→  ./scrabbleemoji.lua Welcome to StarkandWayne Slack hell --points
+58
 ```
 
 ##Contributing

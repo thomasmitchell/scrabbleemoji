@@ -1,6 +1,5 @@
 #!/usr/bin/env lua
 
-local input = table.concat( arg, " ", 1, #arg)
 
 local printScrabble = function()
   local outputTable = {}
@@ -47,7 +46,7 @@ local printPoints = function()
     s = 1,
     t = 1,
     u = 1,
-    v= 4,
+    v = 4,
     w = 4,
     x = 8,
     y = 4,
@@ -60,5 +59,10 @@ local printPoints = function()
   print(total)
 end
 
-if arg[#arg] == "--points" then printPoints()
-else printScrabble() end
+if arg[#arg] == "--points" then 
+  input = table.concat( arg, " ", 1, #arg - 1):lower()
+  printPoints()
+else 
+  input = table.concat( arg, " ", 1, #arg)
+  printScrabble() 
+end
