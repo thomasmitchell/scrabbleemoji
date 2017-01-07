@@ -1,14 +1,52 @@
 #!/usr/bin/env lua
 
+local input = table.concat( arg, " ", 1, #arg)
 
 local printScrabble = function()
+  local increaseTheHell = false
+  local stdEmoji = {
+    a = "a",
+    b = "b",
+    c = "copyright",
+    d = "bow_and_arrow",
+    e = "e-mail",
+    f = "checkered_flag",
+    g = "fuelpump",
+    h = "love_hotel",
+    i = "information_source",
+    j = "hot_pepper",
+    k = "tanabata_tree",
+    l = "boot",
+    m = "m",
+    n = "construction",
+    o = "o",
+    p = "parking",
+    q = "left_speech_bubble",
+    r = "registered",
+    s = "heavy_dollar_sign",
+    t = "latin_cross",
+    u = "ophiuchus",
+    v = "aries",
+    w = "open_hands",
+    x = "heavy_multiplication_x",
+    y = "seedling",
+    z = "zzz"
+  }
   local outputTable = {}
   local toInsert = ""
   for letter in input:gmatch(".") do
     if letter:find("%s") then --space
-      toInsert = ":ltr-blank:" 
+      if increaseTheHell then
+        toInsert = ":white_large_square:"
+      else
+        toInsert = ":ltr-blank:"
+      end
     elseif letter:find("%a") then --letter
-      toInsert = ":ltr-" .. letter:lower() .. ":" 
+      if increaseTheHell then
+        toInsert = ":" .. stdEmoji[letter:lower()] .. ":"
+      else
+        toInsert = ":ltr-" .. letter:lower() .. ":"
+      end
     elseif letter:find("?") then --question mark
       toInsert = ":question-block:"
     elseif letter:find("!") then --exclamation
@@ -46,7 +84,7 @@ local printPoints = function()
     s = 1,
     t = 1,
     u = 1,
-    v = 4,
+    v= 4,
     w = 4,
     x = 8,
     y = 4,
@@ -59,10 +97,5 @@ local printPoints = function()
   print(total)
 end
 
-if arg[#arg] == "--points" then 
-  input = table.concat( arg, " ", 1, #arg - 1):lower()
-  printPoints()
-else 
-  input = table.concat( arg, " ", 1, #arg)
-  printScrabble() 
-end
+if arg[#arg] == "--points" then printPoints()
+else printScrabble() end
