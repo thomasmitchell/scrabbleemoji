@@ -3,6 +3,10 @@ Making S&amp;W Slack a bit more miserable one letter at a time
 
 ![picture](assets/swscrabble.png)
 
+# UPDATE
+
+Someone at Stark & Wayne has removed the scrabble emojis from Slack. We did it, world. We did it.
+
 ## Usage
 ### Getting your emoji text
 ```
